@@ -45,7 +45,7 @@ class Operation:
           independent of any instance-specific data, relying only on the parameters.
         """
         return a + b  # Performs addition of two numbers and returns the result.
-    
+
     @staticmethod
     def subtraction(a: float, b: float) -> float:
         """
@@ -69,7 +69,7 @@ class Operation:
           to test and modify them independently.
         """
         return a - b  # Subtracts the second number from the first and returns the difference.
-    
+
     @staticmethod
     def multiplication(a: float, b: float) -> float:
         """
@@ -92,44 +92,16 @@ class Operation:
           the methods easily reusable in other parts of the program.
         """
         return a * b  # Multiplies the two numbers and returns the product.
-    
+
     @staticmethod
     def division(a: float, b: float) -> float:
-        """
-        Divides the first floating-point number by the second and returns the quotient.
 
-        **Parameters:**
-        - `a (float)`: The dividend.
-        - `b (float)`: The divisor.
-        
-        **Returns:**
-        - `float`: The quotient of `a` divided by `b`.
-
-        **Raises:**
-        - `ValueError`: If the divisor `b` is zero, as division by zero is undefined.
-
-        **Example:**
-        >>> Operation.division(10.0, 2.0)
-        5.0
-        >>> Operation.division(10.0, 0.0)
-        Traceback (most recent call last):
-            ...
-        ValueError: Division by zero is not allowed.
-
-        **Error Handling:**
-        - Division requires extra error handling to prevent division by zero, which 
-          would cause a runtime error. Here, we check if `b` is zero and raise a 
-          `ValueError` with a descriptive message if it is.
-        
-        **Design Insight: Why Raise an Error for Division by Zero?**
-        - Raising an error in this case is a **Defensive Programming** technique, 
-          helping us prevent unexpected results. Instead of letting the program fail 
-          silently or crash, we handle the error gracefully, ensuring that any part of 
-          the program using this function will be alerted to the issue.
-        """
         if b == 0:
             # Checks if the divisor is zero to prevent undefined division.
             raise ValueError("Division by zero is not allowed.")  # Raises an error if division by zero is attempted.
         return a / b  # Divides `a` by `b` and returns the quotient.
 
-    
+    @staticmethod
+    def power(a: float, b: float) -> float:
+
+        return a ** b  # Raises a to the power of b and returns the result.
